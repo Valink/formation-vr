@@ -54,6 +54,8 @@
   <ItemGroup>
      <Compile Include="Assets\App\4.bowling\score\BowlingGameTests.cs" />
      <Compile Include="Assets\App\4.bowling\score\BowlingGame.cs" />
+     <Compile Include="Assets\App\4.bowling\score\Frame.cs" />
+     <Compile Include="Assets\App\4.bowling\score\RollFrameAndIndexInFrame.cs" />
      <None Include="Assets\App\App.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

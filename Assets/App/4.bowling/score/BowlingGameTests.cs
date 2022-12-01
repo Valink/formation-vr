@@ -9,7 +9,7 @@ namespace App._4.bowling.score
         [SetUp]
         public void SetUp()
         {
-            _bowlingGame = new BowlingGame();
+            _bowlingGame = new BowlingGame(10);
         }
         
         [Test]

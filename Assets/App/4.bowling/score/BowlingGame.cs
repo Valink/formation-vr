@@ -4,72 +4,22 @@ using UnityEngine;
 
 namespace App._4.bowling.score
 {
-    internal class Frame
-    {
-        public readonly int[] Rolls;
-        private int _currentRoll = 0;
-        public readonly int Index;
-
-        public Frame(int index, int rollNumber)
-        {
-            Index = index;
-            Rolls = new int[rollNumber];
-        }
-
-        public void Roll(int droppedPinNumber)
-        {
-            Rolls[_currentRoll++] = droppedPinNumber;
-        }
-
-        public bool IsFrameComplete()
-        {
-            return _currentRoll == Rolls.Length || (
-                IsStrike() && Rolls.Length == 2
-            );
-        }
-
-        public bool IsSpare()
-        {
-            return Rolls[0] + Rolls[1] == 10;
-        }
-
-        public bool IsStrike()
-        {
-            return Rolls[0] == 10;
-        }
-
-        public int GetScore()
-        {
-            return Rolls[0] + Rolls[1];
-        }
-
-        public int GetFirstRoll()
-        {
-            return Rolls[0];
-        }
-
-        public override string ToString()
-        {
-            return Rolls.Aggregate($"Frame n°{Index} :", (current, roll) => current + $" {roll}");
-        }
-    }
-
     internal class BowlingGame
     {
         private readonly List<Frame> _frames;
         private Frame _currentFrame;
 
-        public BowlingGame()
+        public BowlingGame(int frameNumber)
         {
             _frames = new List<Frame>();
-            for (var i = 1; i <= 9; i++)
+            for (var i = 1; i <= frameNumber - 1; i++)
             {
-                _frames.Add(new Frame(i, 2));
+                _frames.Add(new Frame(i, 10, 2));
             }
 
-            _frames.Add(new Frame(10, 3));
+            _frames.Add(new Frame(10, 10, 3));
 
-            _currentFrame = _frames[0];
+            _currentFrame = _frames.First();
         }
 
         public void Roll(int droppedPinNumber)
@@ -77,7 +27,7 @@ namespace App._4.bowling.score
             _currentFrame.Roll(droppedPinNumber);
 
             if (!_currentFrame.IsFrameComplete()) return;
-            if (!IsFrameIsLastOne(_currentFrame))
+            if (!IsFrameLastOne(_currentFrame))
             {
                 _currentFrame = GetFrameAfter(_currentFrame);
             }
@@ -89,37 +39,40 @@ namespace App._4.bowling.score
             return _frames[frameIndex + 1];
         }
 
-        private bool IsFrameIsLastOne(Frame frame)
+        private bool IsFrameLastOne(Frame frame)
         {
-            var frameIndex = _frames.IndexOf(frame);
-            return frameIndex == _frames.Count - 1;
+            return _frames.Last() == frame;
         }
 
         public double ComputeScore()
         {
             var score = 0;
-            for (var frameIndex = 0; frameIndex < _frames.Count; frameIndex++)
+            foreach (var frame in _frames)
             {
-                var frame = _frames[frameIndex];
+                score += GetScoreForFrame(frame);
+                Debug.Log("Frame " + frame + " score: " + GetScoreForFrame(frame));
+            }
+            return score;
+        }
 
-                var frameScore = 0;
-                if (frame.IsStrike())
-                {
-                    frameScore = 10 + GetStrikeBonus(frame);
-                }
-                else if (frame.IsSpare())
-                {
-                    frameScore = 10 + GetSpareBonus(frame);
-                }
-                else
-                {
-                    frameScore = frame.GetScore();
-                }
-
-                score += frameScore;
+        private int GetScoreForFrame(Frame frame)
+        {
+            int frameScore;
+            
+            if (frame.IsStrike())
+            {
+                frameScore = frame.PinCount + GetStrikeBonus(frame);
+            }
+            else if (frame.IsSpare())
+            {
+                frameScore = frame.PinCount + GetSpareBonus(frame);
+            }
+            else
+            {
+                frameScore = frame.Rolls[0] + frame.Rolls[1]; // TODO frame.sum ?
             }
 
-            return score;
+            return frameScore;
         }
 
         private int GetSpareBonus(Frame spareFrame)
@@ -130,39 +83,24 @@ namespace App._4.bowling.score
 
         private int GetStrikeBonus(Frame strikeFrame)
         {
-            return GetTwoNextRollSum(strikeFrame);
+            var nextRollFrameAndFrameIndex = GetNextRollFrameAndIndexInFrame(strikeFrame, 0);
+            var nextNextRollFrameAndFrameIndex = GetNextRollFrameAndIndexInFrame(nextRollFrameAndFrameIndex.Frame, nextRollFrameAndFrameIndex.RollIndexInFrame);
+            
+            return nextRollFrameAndFrameIndex.Frame.Rolls[nextRollFrameAndFrameIndex.RollIndexInFrame] +
+                   nextNextRollFrameAndFrameIndex.Frame.Rolls[nextNextRollFrameAndFrameIndex.RollIndexInFrame];
         }
 
-        private int GetTwoNextRollSum(Frame frame) // TODO rn
+        private RollFrameAndIndexInFrame GetNextRollFrameAndIndexInFrame(Frame frame, int rollIndexInFrame)
         {
-            int score;
-
-            if (IsFrameIsLastOne(frame))
+            var nextRollIndexInFrame = frame.GetNextRollIndex(rollIndexInFrame);
+            if (nextRollIndexInFrame != null)
             {
-                score = frame.Rolls[1] + frame.Rolls[2];
+                return new RollFrameAndIndexInFrame(frame, (int)nextRollIndexInFrame);
             }
             else
             {
-                var nextFrame = GetFrameAfter(frame);
-                if (nextFrame.IsStrike())
-                {
-                    if (IsFrameIsLastOne(nextFrame))
-                    {
-                        score = 10 + nextFrame.Rolls[1];
-                    }
-                    else
-                    {
-                        var nextNextFrame = GetFrameAfter(nextFrame);
-                        score = 10 + nextNextFrame.Rolls[0];
-                    }
-                }
-                else
-                {
-                    score = nextFrame.Rolls[0] + nextFrame.Rolls[1];
-                }
+                return new RollFrameAndIndexInFrame(GetFrameAfter(frame), 0);
             }
-
-            return score;
         }
     }
 }

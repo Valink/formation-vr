@@ -47,18 +47,20 @@ namespace App._4.bowling.score
         public double ComputeScore()
         {
             var score = 0;
+
             foreach (var frame in _frames)
             {
-                score += GetScoreForFrame(frame);
-                Debug.Log("Frame " + frame + " score: " + GetScoreForFrame(frame));
+                var frameScore = GetScoreForFrame(frame);
+                Debug.Log($"{frame} => {frameScore}");
+                score += frameScore;
             }
+
             return score;
         }
 
         private int GetScoreForFrame(Frame frame)
         {
             int frameScore;
-            
             if (frame.IsStrike())
             {
                 frameScore = frame.PinCount + GetStrikeBonus(frame);
@@ -69,7 +71,7 @@ namespace App._4.bowling.score
             }
             else
             {
-                frameScore = frame.Rolls[0] + frame.Rolls[1]; // TODO frame.sum ?
+                frameScore = frame.Rolls[0] + frame.Rolls[1];
             }
 
             return frameScore;
@@ -77,17 +79,18 @@ namespace App._4.bowling.score
 
         private int GetSpareBonus(Frame spareFrame)
         {
-            var nextFrame = GetFrameAfter(spareFrame);
-            return nextFrame.GetFirstRoll();
+            var nextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(spareFrame, 1);
+            return nextRollFrameAndIndexInFrame.Frame.Rolls[nextRollFrameAndIndexInFrame.RollIndexInFrame];
         }
 
         private int GetStrikeBonus(Frame strikeFrame)
         {
-            var nextRollFrameAndFrameIndex = GetNextRollFrameAndIndexInFrame(strikeFrame, 0);
-            var nextNextRollFrameAndFrameIndex = GetNextRollFrameAndIndexInFrame(nextRollFrameAndFrameIndex.Frame, nextRollFrameAndFrameIndex.RollIndexInFrame);
-            
-            return nextRollFrameAndFrameIndex.Frame.Rolls[nextRollFrameAndFrameIndex.RollIndexInFrame] +
-                   nextNextRollFrameAndFrameIndex.Frame.Rolls[nextNextRollFrameAndFrameIndex.RollIndexInFrame];
+            var nextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(strikeFrame, 0);
+            var nextNextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(nextRollFrameAndIndexInFrame.Frame,
+                nextRollFrameAndIndexInFrame.RollIndexInFrame);
+
+            return nextRollFrameAndIndexInFrame.Frame.Rolls[nextRollFrameAndIndexInFrame.RollIndexInFrame] +
+                   nextNextRollFrameAndIndexInFrame.Frame.Rolls[nextNextRollFrameAndIndexInFrame.RollIndexInFrame];
         }
 
         private RollFrameAndIndexInFrame GetNextRollFrameAndIndexInFrame(Frame frame, int rollIndexInFrame)

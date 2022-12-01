@@ -11,7 +11,7 @@ namespace App._4.bowling.score
         {
             _bowlingGame = new BowlingGame(10);
         }
-        
+
         [Test]
         public void RollNoPinInGame()
         {
@@ -24,6 +24,13 @@ namespace App._4.bowling.score
         {
             RollMany(20, 1);
             Assert.AreEqual(20, _bowlingGame.ComputeScore());
+        }
+
+        [Test]
+        public void RollASpareGame()
+        {
+            RollMany(21, 5);
+            Assert.AreEqual(10 * (10 + 5), _bowlingGame.ComputeScore());
         }
 
         [Test]
@@ -62,57 +69,57 @@ namespace App._4.bowling.score
         [Test]
         public void RollASpecialSpare()
         {
-            Roll( 0);
-            Roll( 10);
-            Roll( 1);
-            Roll( 1);
+            Roll(0);
+            Roll(10);
+            Roll(1);
+            Roll(1);
             Assert.AreEqual(13, _bowlingGame.ComputeScore());
         }
-        
+
         [Test]
         public void DummyPlay1()
         {
-            Roll( 5);
-            Roll( 5);
-            Roll( 4);
-            Roll( 5);
-            Roll( 8);
-            Roll( 2);
-            Roll( 10);
-            Roll( 0);
-            Roll( 10);
-            Roll( 10);
-            Roll( 6);
-            Roll( 2);
-            Roll( 10);
-            Roll( 4);
-            Roll( 6);
-            Roll( 10);
-            Roll( 10);
-            Roll( 0);
+            Roll(5);
+            Roll(5);
+            Roll(4);
+            Roll(5);
+            Roll(8);
+            Roll(2);
+            Roll(10);
+            Roll(0);
+            Roll(10);
+            Roll(10);
+            Roll(6);
+            Roll(2);
+            Roll(10);
+            Roll(4);
+            Roll(6);
+            Roll(10);
+            Roll(10);
+            Roll(0);
             Assert.AreEqual(169, _bowlingGame.ComputeScore());
         }
 
         [Test]
         public void DummyPlay2()
         {
-            Roll( 5);
-            Roll( 5);
-            Roll( 4);
-            Roll( 0);
-            Roll( 8);
-            Roll( 1);
-            Roll( 10);
-            Roll( 0);
-            Roll( 10);
-            Roll( 10);
-            Roll( 10);
-            Roll( 10);
-            Roll( 4);
-            Roll( 6);
-            Roll( 10);
-            Roll( 10);
-            Roll( 5);
+            Roll(5);
+            Roll(5);
+            Roll(4);
+            Roll(0);
+            Roll(8);
+            Roll(1);
+            Roll(10);
+            Roll(0);
+            Roll(10);
+            Roll(10);
+            Roll(10);
+            Roll(10);
+            Roll(4);
+            Roll(6);
+            Roll(10);
+            Roll(10);
+            Roll(5);
             Assert.AreEqual(186, _bowlingGame.ComputeScore());
         }
 

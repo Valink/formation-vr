@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace App._4.bowling.score
 {
@@ -46,16 +45,7 @@ namespace App._4.bowling.score
 
         public double ComputeScore()
         {
-            var score = 0;
-
-            foreach (var frame in _frames)
-            {
-                var frameScore = GetScoreForFrame(frame);
-                Debug.Log($"{frame} => {frameScore}");
-                score += frameScore;
-            }
-
-            return score;
+            return _frames.Sum(GetScoreForFrame);
         }
 
         private int GetScoreForFrame(Frame frame)

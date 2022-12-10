@@ -814,6 +814,10 @@
       <Project>{2265f7d0-094d-023f-abe1-f7805f88e64d}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
+    <ProjectReference Include="com.valink.core.csproj">
+      <Project>{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}</Project>
+      <Name>com.valink.core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Valink/App/Bowling.unity
+    path: Assets/app/Bowling.unity
     guid: 045b07d3b81036d4d80efb3acb8702ff
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,

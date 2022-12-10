@@ -13,11 +13,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{431af9b3-8ae9-c633-7084-6c76b8996e53}</ProjectGuid>
+    <ProjectGuid>{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>app</AssemblyName>
+    <AssemblyName>com.valink.core</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -52,20 +52,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\app\bowling\score\Frame.cs" />
-     <Compile Include="Assets\app\bowling\score\RollFrameAndIndexInFrame.cs" />
-     <Compile Include="Assets\app\bowling\pin\PinBehaviour.cs" />
-     <Compile Include="Assets\app\bowling\score\BowlingGameTests.cs" />
-     <Compile Include="Assets\app\bowling\PinPositioner.cs" />
-     <Compile Include="Assets\app\bowling\RollPrefab.cs" />
-     <Compile Include="Assets\app\bowling\FrameUI.cs" />
-     <Compile Include="Assets\app\bowling\score\RollEventArgs.cs" />
-     <Compile Include="Assets\app\bowling\BowlingManager.cs" />
-     <Compile Include="Assets\app\bowling\ScoreDisplayer.cs" />
-     <Compile Include="Assets\app\bowling\score\BowlingGame.cs" />
-     <Compile Include="Assets\app\bowling\PinSpawnController.cs" />
-     <Compile Include="Assets\app\bowling\BallTrigger.cs" />
-     <None Include="Assets\app\app.asmdef" />
+     <Compile Include="Packages\com.valink.core\range\RangeModifier.cs" />
+     <Compile Include="Packages\com.valink.core\range\RangeModifierTests.cs" />
+     <None Include="Packages\com.valink.core\com.valink.core.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -296,6 +285,21 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="log4netPlastic">
+ <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
+ </Reference>
+ <Reference Include="ReportGeneratorMerged">
+ <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Plastic.Newtonsoft.Json">
+ <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Plastic.Antlr3.Runtime">
+ <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="unityplastic">
+ <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/wamp/www/Formation VR/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -653,9 +657,6 @@
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>C:/wamp/www/Formation VR/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/wamp/www/Formation VR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/wamp/www/Formation VR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

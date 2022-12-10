@@ -52,9 +52,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Valink\core\range\RangeModifierTests.cs" />
-     <Compile Include="Assets\Valink\core\range\RangeModifier.cs" />
-     <None Include="Assets\Valink\core\core.asmdef" />
+     <Compile Include="Packages\com.valink.core\range\RangeModifier.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -651,6 +649,7 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

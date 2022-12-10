@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app.csproj", "{431af9b3-8ae9-c633-7084-6c76b8996e53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "core.csproj", "{6a94890a-251a-044b-29f2-16a31519a635}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.valink.core", "com.valink.core.csproj", "{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,10 @@ Global
 		{431af9b3-8ae9-c633-7084-6c76b8996e53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{431af9b3-8ae9-c633-7084-6c76b8996e53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{431af9b3-8ae9-c633-7084-6c76b8996e53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6a94890a-251a-044b-29f2-16a31519a635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6a94890a-251a-044b-29f2-16a31519a635}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6a94890a-251a-044b-29f2-16a31519a635}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6a94890a-251a-044b-29f2-16a31519a635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

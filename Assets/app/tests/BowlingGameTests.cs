@@ -1,36 +1,37 @@
-﻿using NUnit.Framework;
+﻿using app.bowling.logic;
+using NUnit.Framework;
 
-namespace app.bowling.score
+namespace app.tests
 {
     public class BowlingGameTests
     {
-        private BowlingGame _bowlingGame;
+        private Game _game;
         
         [SetUp]
         public void SetUp()
         {
-            _bowlingGame = new BowlingGame(10);
+            _game = new Game(10);
         }
 
         [Test]
         public void RollNoPinInGame()
         {
             RollMany(20, 0);
-            Assert.AreEqual(0, _bowlingGame.ComputeScore());
+            Assert.AreEqual(0, _game.ComputeScore());
         }
 
         [Test]
         public void Roll20PinsInGame()
         {
             RollMany(20, 1);
-            Assert.AreEqual(20, _bowlingGame.ComputeScore());
+            Assert.AreEqual(20, _game.ComputeScore());
         }
 
         [Test]
         public void RollASpareGame()
         {
             RollMany(21, 5);
-            Assert.AreEqual(10 * (10 + 5), _bowlingGame.ComputeScore());
+            Assert.AreEqual(10 * (10 + 5), _game.ComputeScore());
         }
 
         [Test]
@@ -39,7 +40,7 @@ namespace app.bowling.score
             Roll(6);
             Roll(4);
             Roll(1);
-            Assert.AreEqual(12, _bowlingGame.ComputeScore());
+            Assert.AreEqual(12, _game.ComputeScore());
         }
 
         [Test]
@@ -48,14 +49,14 @@ namespace app.bowling.score
             Roll(10);
             Roll(4);
             Roll(1);
-            Assert.AreEqual(20, _bowlingGame.ComputeScore());
+            Assert.AreEqual(20, _game.ComputeScore());
         }
 
         [Test]
         public void RollAPerfectGame()
         {
             RollMany(12, 10);
-            Assert.AreEqual(300, _bowlingGame.ComputeScore());
+            Assert.AreEqual(300, _game.ComputeScore());
         }
 
         [Test]
@@ -63,7 +64,7 @@ namespace app.bowling.score
         {
             RollMany(11, 10);
             Roll(1);
-            Assert.AreEqual(291, _bowlingGame.ComputeScore());
+            Assert.AreEqual(291, _game.ComputeScore());
         }
 
         [Test]
@@ -73,7 +74,7 @@ namespace app.bowling.score
             Roll(10);
             Roll(1);
             Roll(1);
-            Assert.AreEqual(13, _bowlingGame.ComputeScore());
+            Assert.AreEqual(13, _game.ComputeScore());
         }
 
         [Test]
@@ -97,7 +98,7 @@ namespace app.bowling.score
             Roll(10);
             Roll(10);
             Roll(0);
-            Assert.AreEqual(169, _bowlingGame.ComputeScore());
+            Assert.AreEqual(169, _game.ComputeScore());
         }
 
         [Test]
@@ -120,7 +121,7 @@ namespace app.bowling.score
             Roll(10);
             Roll(10);
             Roll(5);
-            Assert.AreEqual(186, _bowlingGame.ComputeScore());
+            Assert.AreEqual(186, _game.ComputeScore());
         }
 
         private void RollMany(int rollNumber, int pinsCount)
@@ -133,7 +134,7 @@ namespace app.bowling.score
 
         private void Roll(int pinsCount)
         {
-            _bowlingGame.Roll(pinsCount);
+            _game.Roll(pinsCount);
         }
     }
 }

@@ -1,28 +1,28 @@
 using System.Collections;
-using app.bowling.score;
+using app.bowling.logic;
 using UnityEngine;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    public class BowlingManager : MonoBehaviour
+    public class BowlingManagerBehaviour : MonoBehaviour
     {
-        [SerializeField] private BowlingGame _bowlingGame;
-        [SerializeField] private ScoreDisplayer scoreDisplayer;
-        [SerializeField] private PinPositioner pinPositioner;
+        [SerializeField] private Game _game;
+        [SerializeField] private ScoreDisplayerBehaviour scoreDisplayerBehaviour;
+        [SerializeField] private PinSpawnerBehaviour pinSpawnerBehaviour;
         private int _currentFrameDroppedPinNumber = 0;
 
-        [SerializeField] private BallTrigger ballTrigger;
+        [SerializeField] private BallDetectorBehaviour ballDetectorBehaviour;
         [SerializeField] private GameObject ball;
 
         private void Awake()
         {
             const int frameNumber = 10;
-            _bowlingGame = new BowlingGame(frameNumber);
-            scoreDisplayer.Setup(_bowlingGame.Frames.Count);
+            _game = new Game(frameNumber);
+            scoreDisplayerBehaviour.Setup(_game.Frames.Count);
             
             SetupFrame();
             
-            ballTrigger.OnBallReachLaneEnd += OnBallReachLaneEnd;
+            ballDetectorBehaviour.OnBallReachLaneEnd += OnBallReachLaneEnd;
         }
 
         private void OnBallReachLaneEnd()
@@ -34,14 +34,14 @@ namespace Valink.app.bowling
         {
             yield return new WaitForSeconds(time);
 
-            _bowlingGame.Roll(_currentFrameDroppedPinNumber);
+            _game.Roll(_currentFrameDroppedPinNumber);
             _currentFrameDroppedPinNumber = 0;
 
-            scoreDisplayer.UpdateFrames(_bowlingGame.Frames);
+            scoreDisplayerBehaviour.UpdateFrames(_game.Frames);
 
-            pinPositioner.RemoveDroppedPins();
+            pinSpawnerBehaviour.RemoveDroppedPins();
             
-            if (_bowlingGame.CurrentFrame.IsFrameComplete())
+            if (_game.CurrentFrame.IsFrameComplete())
             {
                 SetupFrame();
             }
@@ -49,7 +49,7 @@ namespace Valink.app.bowling
         
         private void SetupFrame()
         {
-            var currentFramePins = pinPositioner.SpawnPins(4);
+            var currentFramePins = pinSpawnerBehaviour.SpawnPins(4);
             currentFramePins.ForEach(p => p.OnPinDropped += OnPinDropped);
         }
 

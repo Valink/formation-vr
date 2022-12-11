@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace app.bowling.score
+namespace app.bowling.logic
 {
     public class Frame
     {

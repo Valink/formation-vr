@@ -1,13 +1,13 @@
-﻿using app.bowling.score;
+﻿using app.bowling.logic;
 using TMPro;
 using UnityEngine;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    internal class FrameUI : MonoBehaviour
+    internal class FrameUIBehaviour : MonoBehaviour
     {
         [SerializeField] private Transform rolls;
-        [SerializeField] private RollPrefab rollPrefab;
+        [SerializeField] private RollUIBehaviour rollUiBehaviour;
         [SerializeField] private TMP_Text index;
         [SerializeField] private TMP_Text cumulativeScore;
 
@@ -22,7 +22,7 @@ namespace Valink.app.bowling
             
             foreach (var roll in frame.Rolls)
             {
-                var rollUi = Instantiate(rollPrefab, rolls);
+                var rollUi = Instantiate(rollUiBehaviour, rolls);
                 rollUi.SetText(roll);
             }
         }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace app.bowling.score
+namespace app.bowling.logic
 {
     public class RollEventArgs
     {

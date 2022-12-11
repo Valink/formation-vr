@@ -1,9 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    internal class RollPrefab : MonoBehaviour
+    internal class RollUIBehaviour : MonoBehaviour
     {
         [SerializeField] private TMP_Text droppedPinNumber;
 

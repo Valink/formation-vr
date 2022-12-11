@@ -860,9 +860,9 @@
       <Project>{431af9b3-8ae9-c633-7084-6c76b8996e53}</Project>
       <Name>app</Name>
     </ProjectReference>
-    <ProjectReference Include="scoreTests.csproj">
-      <Project>{f6ba34f0-c251-bcff-18f4-00c37fb03fb3}</Project>
-      <Name>scoreTests</Name>
+    <ProjectReference Include="tests.csproj">
+      <Project>{bbdb835e-7989-f7a2-8ae2-3132c6b13faf}</Project>
+      <Name>tests</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

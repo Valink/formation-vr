@@ -2,16 +2,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    public class PinSpawnController : MonoBehaviour
+    public class PinSpawnControllerBehaviour : MonoBehaviour
     {
         [SerializeField] private Button spawnButton;
         [SerializeField] private Button lessPinRowButton;
         [SerializeField] private Button morePinRowButton;
         [SerializeField] private int pinRowNumber;
         [SerializeField] private TMP_Text pinRowNumberText;
-        [SerializeField] private PinPositioner pinPositioner;
+        [SerializeField] private PinSpawnerBehaviour pinSpawnerBehaviour;
 
         private void Awake()
         {
@@ -40,9 +40,9 @@ namespace Valink.app.bowling
 
         private void SpawnPins()
         {
-            pinPositioner.RemovePins();
+            pinSpawnerBehaviour.RemovePins();
             var pinRowNumber = int.Parse(pinRowNumberText.text);
-            pinPositioner.SpawnPins(pinRowNumber);
+            pinSpawnerBehaviour.SpawnPins(pinRowNumber);
         }
     }
 }

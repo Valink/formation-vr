@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace app.bowling.score
+namespace app.bowling.logic
 {
-    public class BowlingGame
+    public class Game
     {
         public readonly List<Frame> Frames;
         public Frame CurrentFrame;
 
-        public BowlingGame(int frameNumber)
+        public Game(int frameNumber)
         {
             Frames = new List<Frame>();
             for (var i = 1; i <= frameNumber - 1; i++)

@@ -1,4 +1,4 @@
-﻿namespace app.bowling.score
+﻿namespace app.bowling.logic
 {
     internal class RollFrameAndIndexInFrame
     {

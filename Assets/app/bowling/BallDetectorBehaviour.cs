@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    public class BallTrigger : MonoBehaviour
+    public class BallDetectorBehaviour : MonoBehaviour
     {
         public delegate void BallEnterEvent();
         public event BallEnterEvent OnBallReachLaneEnd;

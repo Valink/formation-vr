@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Valink.app.bowling.pin
+namespace app.bowling.pin
 {
     public class PinBehaviour : MonoBehaviour
     {

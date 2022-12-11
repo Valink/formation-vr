@@ -1,18 +1,18 @@
 using System.Collections.Generic;
-using app.bowling.score;
+using app.bowling.logic;
 using UnityEngine;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    public class ScoreDisplayer : MonoBehaviour
+    public class ScoreDisplayerBehaviour : MonoBehaviour
     {
         [SerializeField] private Transform framesContainer;
-        [SerializeField] private FrameUI framePrefab;
-        private List<FrameUI> _framesUI;
+        [SerializeField] private FrameUIBehaviour framePrefab;
+        private List<FrameUIBehaviour> _framesUI;
 
         public void Setup(int frameNumber)
         {
-            _framesUI = new List<FrameUI>();
+            _framesUI = new List<FrameUIBehaviour>();
             for (var frameIndex = 1; frameIndex <= frameNumber; frameIndex++)
             {
                 var frameUI = Instantiate(framePrefab, framesContainer);

@@ -1,10 +1,10 @@
 using System.Collections.Generic;
+using app.bowling.pin;
 using UnityEngine;
-using Valink.app.bowling.pin;
 
-namespace Valink.app.bowling
+namespace app.bowling
 {
-    public class PinPositioner : MonoBehaviour
+    public class PinSpawnerBehaviour : MonoBehaviour
     {
         [SerializeField] private PinBehaviour pinPrefab;
         [SerializeField] private Transform pinParent;

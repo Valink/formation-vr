@@ -41,18 +41,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\app\bowling\score\Frame.cs" />
-     <Compile Include="Assets\app\bowling\score\RollFrameAndIndexInFrame.cs" />
+     <Compile Include="Assets\app\bowling\logic\Frame.cs" />
+     <Compile Include="Assets\app\bowling\logic\RollFrameAndIndexInFrame.cs" />
      <Compile Include="Assets\app\bowling\pin\PinBehaviour.cs" />
-     <Compile Include="Assets\app\bowling\PinPositioner.cs" />
-     <Compile Include="Assets\app\bowling\RollPrefab.cs" />
-     <Compile Include="Assets\app\bowling\FrameUI.cs" />
-     <Compile Include="Assets\app\bowling\score\RollEventArgs.cs" />
-     <Compile Include="Assets\app\bowling\BowlingManager.cs" />
-     <Compile Include="Assets\app\bowling\ScoreDisplayer.cs" />
-     <Compile Include="Assets\app\bowling\score\BowlingGame.cs" />
-     <Compile Include="Assets\app\bowling\PinSpawnController.cs" />
-     <Compile Include="Assets\app\bowling\BallTrigger.cs" />
+     <Compile Include="Assets\app\bowling\PinSpawnerBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\RollUIBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\FrameUIBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\logic\RollEventArgs.cs" />
+     <Compile Include="Assets\app\bowling\BowlingManagerBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\ScoreDisplayerBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\logic\Game.cs" />
+     <Compile Include="Assets\app\bowling\PinSpawnControllerBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\BallDetectorBehaviour.cs" />
      <None Include="Assets\app\app.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -692,12 +692,6 @@
      </Reference>
      <Reference Include="Unity.TextMeshPro">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.TestRunner">
-     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEngine.TestRunner">
-     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

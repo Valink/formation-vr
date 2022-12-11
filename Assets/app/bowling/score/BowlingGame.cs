@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Valink.app.bowling.score
+namespace app.bowling.score
 {
     public class BowlingGame
     {

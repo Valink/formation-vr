@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Valink.app.bowling.score
+namespace app.bowling.score
 {
     public class BowlingGameTests
     {

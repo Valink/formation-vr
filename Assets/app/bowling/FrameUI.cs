@@ -1,6 +1,6 @@
-﻿using TMPro;
+﻿using app.bowling.score;
+using TMPro;
 using UnityEngine;
-using Valink.app.bowling.score;
 
 namespace Valink.app.bowling
 {

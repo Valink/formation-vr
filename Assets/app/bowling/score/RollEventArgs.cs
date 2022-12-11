@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Valink.app.bowling.score
+namespace app.bowling.score
 {
     public class RollEventArgs
     {

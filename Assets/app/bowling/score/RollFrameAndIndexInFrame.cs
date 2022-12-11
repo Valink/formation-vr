@@ -1,4 +1,4 @@
-﻿namespace Valink.app.bowling.score
+﻿namespace app.bowling.score
 {
     internal class RollFrameAndIndexInFrame
     {

@@ -5,13 +5,14 @@ namespace app.bowling
     public class BallDetectorBehaviour : MonoBehaviour
     {
         public delegate void BallEnterEvent();
-        public event BallEnterEvent OnBallReachLaneEnd;
+        public event BallEnterEvent BallEntered;
     
+        
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Ball"))
             {
-                OnBallReachLaneEnd?.Invoke();            
+                BallEntered?.Invoke();            
             }
         }
     }

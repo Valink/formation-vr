@@ -23,10 +23,12 @@ namespace app.bowling
 
         public void UpdateFrames(List<Frame> frames)
         {
-            frames.ForEach(frame =>
-            {
-                _framesUI[frame.Index - 1].SetScores(frame);
-            });
+            frames.ForEach(UpdateFrame);
+        }
+
+        public void UpdateFrame(Frame frame)
+        {
+            _framesUI[frame.Index - 1].SetScores(frame);
         }
     }
 }

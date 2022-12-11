@@ -7,6 +7,12 @@ namespace app.bowling.logic
     {
         public readonly List<Frame> Frames;
         public Frame CurrentFrame;
+        
+        public delegate void FrameCompletedHandler(Frame frame);
+        public event FrameCompletedHandler FrameCompleted;
+
+        public delegate void GameCompletedHandler(Game game);
+        public event GameCompletedHandler GameCompleted;
 
         public Game(int frameNumber)
         {
@@ -25,8 +31,15 @@ namespace app.bowling.logic
         {
             CurrentFrame.Roll(droppedPinNumber);
 
-            if (!CurrentFrame.IsFrameComplete()) return;
-            if (!IsFrameLastOne(CurrentFrame))
+            if (!CurrentFrame.IsComplete()) return;
+            
+            FrameCompleted?.Invoke(CurrentFrame);
+
+            if (IsFrameLastOne(CurrentFrame))
+            {
+                GameCompleted?.Invoke(this);
+            }
+            else
             {
                 CurrentFrame = GetFrameAfter(CurrentFrame);
             }

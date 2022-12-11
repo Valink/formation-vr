@@ -23,7 +23,7 @@ namespace app.bowling.logic
             Rolls[CurrentRollIndex++] = droppedPinNumber;
         }
 
-        public bool IsFrameComplete()
+        public bool IsComplete()
         {
             return AllRollsDone() || (
                 IsStrike() && Rolls.Length == 2

@@ -1,4 +1,5 @@
-﻿using app.bowling.logic;
+﻿using System.Collections.Generic;
+using app.bowling.logic;
 using TMPro;
 using UnityEngine;
 
@@ -7,29 +8,40 @@ namespace app.bowling
     internal class FrameUIBehaviour : MonoBehaviour
     {
         [SerializeField] private Transform rolls;
-        [SerializeField] private RollUIBehaviour rollUiBehaviour;
+        [SerializeField] private RollUIBehaviour rollUiBehaviourPrefab;
+        [SerializeField] private List<RollUIBehaviour> rollUiBehaviours;
         [SerializeField] private TMP_Text index;
         [SerializeField] private TMP_Text cumulativeScore;
 
-        public void SetScores(Frame frame)
+        public void Awake()
         {
+            rollUiBehaviours = new List<RollUIBehaviour>();
+        }
+        
+        public void Setup(Frame frame)
+        {
+            index.text = frame.Index.ToString();
             cumulativeScore.text = frame.CumulativeScore.ToString();
-
-            foreach (Transform roll in rolls)
-            {
-                Destroy(roll.gameObject);
-            }
             
             foreach (var roll in frame.Rolls)
             {
-                var rollUi = Instantiate(rollUiBehaviour, rolls);
-                rollUi.SetText(roll);
+                var rollUi = Instantiate(rollUiBehaviourPrefab, rolls);
+                rollUi.SetRoll(roll);
+                rollUiBehaviours.Add(rollUi);
             }
         }
 
-        public void SetIndex(int frameIndex)
+        public void SetScores(Frame frame)
         {
-            index.text = frameIndex.ToString();
+            Debug.Log("frame.CumulativeScore");
+            Debug.Log(frame.CumulativeScore);
+            cumulativeScore.text = frame.CumulativeScore.ToString();
+            
+            var rollIndexInFrame = 0;
+            foreach (var roll in frame.Rolls)
+            {
+                rollUiBehaviours[rollIndexInFrame++].SetRoll(roll);
+            }
         }
     }
 }

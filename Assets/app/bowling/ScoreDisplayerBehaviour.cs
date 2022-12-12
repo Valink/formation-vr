@@ -10,20 +10,15 @@ namespace app.bowling
         [SerializeField] private FrameUIBehaviour framePrefab;
         private List<FrameUIBehaviour> _framesUI;
 
-        public void Setup(int frameNumber)
+        public void Setup(List<Frame> frames)
         {
             _framesUI = new List<FrameUIBehaviour>();
-            for (var frameIndex = 1; frameIndex <= frameNumber; frameIndex++)
+            foreach (var frame in frames)
             {
                 var frameUI = Instantiate(framePrefab, framesContainer);
-                frameUI.SetIndex(frameIndex);
+                frameUI.Setup(frame);
                 _framesUI.Add(frameUI);
             }
-        }
-
-        public void UpdateFrames(List<Frame> frames)
-        {
-            frames.ForEach(UpdateFrame);
         }
 
         public void UpdateFrame(Frame frame)

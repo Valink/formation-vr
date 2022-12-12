@@ -5,11 +5,11 @@ namespace app.bowling
 {
     internal class RollUIBehaviour : MonoBehaviour
     {
-        [SerializeField] private TMP_Text droppedPinNumber;
+        [SerializeField] private TMP_Text droppedPinNumberText;
 
-        public void SetText(int droppedPinNumber)
+        public void SetRoll(int? droppedPinNumber)
         {
-            this.droppedPinNumber.text = droppedPinNumber.ToString();
+            droppedPinNumberText.text = droppedPinNumber.HasValue ? droppedPinNumber.Value.ToString() : " ";
         }
     }
 }

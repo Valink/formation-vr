@@ -4,17 +4,23 @@ namespace app.bowling.logic
 {
     public class Frame
     {
-        public readonly int[] Rolls;
+        public readonly int?[] Rolls;
         public int CurrentRollIndex;
         public readonly int PinCount;
         public readonly int Index;
-        public int CumulativeScore;
+        public int? CumulativeScore;
 
         public Frame(int index, int pinCount, int rollNumber)
         {
             Index = index;
             PinCount = pinCount;
-            Rolls = new int[rollNumber];
+            Rolls = new int?[rollNumber];
+            // set all roll 0 // fix tests
+            // for (var i = 0; i < rollNumber; i++)
+            // {
+            //     Rolls[i] = 0;
+            // }
+      
             CurrentRollIndex = 0;
         }
 
@@ -43,11 +49,6 @@ namespace app.bowling.logic
         public bool IsStrike()
         {
             return Rolls.First() == 10;
-        }
-
-        public int GetFirstRoll()
-        {
-            return Rolls.First();
         }
 
         public override string ToString()

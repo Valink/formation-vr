@@ -21,7 +21,7 @@ namespace app.bowling
         {
             const int frameNumber = 10;
             _game = new Game(frameNumber);
-            scoreDisplayerBehaviour.Setup(frameNumber);
+            scoreDisplayerBehaviour.Setup(_game.Frames);
 
             _game.GameCompleted += OnGameCompleted;
             ballDetectorBehaviour.BallEntered += OnBallEntered;
@@ -42,11 +42,7 @@ namespace app.bowling
 
         private async void OnBallEntered()
         {
-            Debug.Log("Test1");
-
-            await Task.Delay(3000);
-
-            Debug.Log("Test2");
+            await Task.Delay(5000);
 
             var droppedPinsNumber = 0;
             foreach (var pin in _currentFramePins)
@@ -60,6 +56,8 @@ namespace app.bowling
 
             var gameCurrentFrame = _game.CurrentFrame;
             _game.Roll(droppedPinsNumber);
+            _game.ComputeScore();
+            
             scoreDisplayerBehaviour.UpdateFrame(gameCurrentFrame);
 
             if (gameCurrentFrame.IsComplete())

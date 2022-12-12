@@ -75,26 +75,78 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+     <Compile Include="Assets\HMDInfoManager.cs" />
+     <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Tunneling Vignette" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\XR" />
+     <Folder Include="Assets\ExampleAssets\Prefabs" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees\Prefabs" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
+     <Folder Include="Assets\ExampleAssets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes\Materials" />
+     <Folder Include="Assets\XR\Settings" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees\Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\XRI" />
+     <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Starter Assets" />
      <None Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Tunneling Vignette\TunnelingVignette.shader" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees" />
+     <Folder Include="Assets\Samples" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <Folder Include="Assets\Darth_Artisan\Free_Trees\Scenes" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <Folder Include="Assets\Samples\XR Plugin Management" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\ExampleAssets\Textures" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources\Sprite Assets" />
+     <Folder Include="Assets\ExampleAssets\Tutorial" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
+     <Folder Include="Assets\ExampleAssets\Models" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <Folder Include="Assets\XR\Loaders" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\Samples\XR Plugin Management\4.3.1" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Prefabs" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Scenes" />
+     <Folder Include="Assets\XRI\Settings" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1" />
+     <Folder Include="Assets\Darth_Artisan" />
+     <Folder Include="Assets\ProBuilder Data" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\XR Device Simulator" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Textures" />
+     <Folder Include="Assets\ExampleAssets\Materials" />
+     <Folder Include="Assets\ExampleAssets\Tutorial\Images" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <Folder Include="Assets\XRI\Settings\Resources" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources\Fonts &amp; Materials" />
+     <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources\Color Gradient Presets" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
@@ -843,6 +895,12 @@
      </Reference>
      <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.XR.MockHMD">
+     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.XR.MockHMD.Editor">
+     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

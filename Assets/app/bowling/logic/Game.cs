@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace app.bowling.logic
 {
@@ -7,11 +8,13 @@ namespace app.bowling.logic
     {
         public readonly List<Frame> Frames;
         public Frame CurrentFrame;
-        
+
         public delegate void FrameCompletedHandler(Frame frame);
+
         public event FrameCompletedHandler FrameCompleted;
 
         public delegate void GameCompletedHandler(Game game);
+
         public event GameCompletedHandler GameCompleted;
 
         public Game(int frameNumber)
@@ -32,7 +35,7 @@ namespace app.bowling.logic
             CurrentFrame.Roll(droppedPinNumber);
 
             if (!CurrentFrame.IsComplete()) return;
-            
+
             FrameCompleted?.Invoke(CurrentFrame);
 
             if (IsFrameLastOne(CurrentFrame))
@@ -56,12 +59,14 @@ namespace app.bowling.logic
             return Frames.Last() == frame;
         }
 
-        public double ComputeScore()
+        public int? ComputeScore()
         {
-            var score = 0;
+            int? score = 0;
             Frames.ForEach(frame =>
             {
+                // if (frame.Rolls.All(r => r.HasValue)) // TODO Move to display
                 score += GetScoreForFrame(frame);
+                Debug.Log(score);
                 frame.CumulativeScore = score;
             });
             return score;
@@ -80,7 +85,7 @@ namespace app.bowling.logic
             }
             else
             {
-                frameScore = frame.Rolls[0] + frame.Rolls[1];
+                frameScore = (frame.Rolls[0] ?? 0) + (frame.Rolls[1] ?? 0); // TODO method for this ?
             }
 
             return frameScore;
@@ -89,17 +94,26 @@ namespace app.bowling.logic
         private int GetSpareBonus(Frame spareFrame)
         {
             var nextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(spareFrame, 1);
-            return nextRollFrameAndIndexInFrame.Frame.Rolls[nextRollFrameAndIndexInFrame.RollIndexInFrame];
+            var frame = nextRollFrameAndIndexInFrame.Frame;
+            var rollIndexInFrame = nextRollFrameAndIndexInFrame.RollIndexInFrame;
+
+            return frame.Rolls[rollIndexInFrame] ?? 0;
         }
 
         private int GetStrikeBonus(Frame strikeFrame)
         {
             var nextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(strikeFrame, 0);
-            var nextNextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(nextRollFrameAndIndexInFrame.Frame,
-                nextRollFrameAndIndexInFrame.RollIndexInFrame);
+            var frameA = nextRollFrameAndIndexInFrame.Frame;
+            var rollIndexInFrameA = nextRollFrameAndIndexInFrame.RollIndexInFrame;
 
-            return nextRollFrameAndIndexInFrame.Frame.Rolls[nextRollFrameAndIndexInFrame.RollIndexInFrame] +
-                   nextNextRollFrameAndIndexInFrame.Frame.Rolls[nextNextRollFrameAndIndexInFrame.RollIndexInFrame];
+            var nextNextRollFrameAndIndexInFrame = GetNextRollFrameAndIndexInFrame(frameA,
+                rollIndexInFrameA);
+            var frameB = nextNextRollFrameAndIndexInFrame.Frame;
+            var rollIndexInFrameB = nextNextRollFrameAndIndexInFrame.RollIndexInFrame;
+
+            var nextRoll = frameA.Rolls[rollIndexInFrameA] ?? 0;
+            var nextNextRoll = frameB.Rolls[rollIndexInFrameB] ?? 0;
+            return nextRoll + nextNextRoll;
         }
 
         private RollFrameAndIndexInFrame GetNextRollFrameAndIndexInFrame(Frame frame, int rollIndexInFrame)

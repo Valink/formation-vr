@@ -75,13 +75,13 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\HMDInfoManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
      <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Tunneling Vignette" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
+     <Folder Include="Packages\com.valink.core\Samples" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\XR" />
@@ -89,14 +89,18 @@
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Prefabs" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\ExampleAssets" />
+     <Folder Include="Packages\com.valink.core\valink" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Packages\com.valink.core\Tests" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
+     <None Include="Packages\com.valink.core\package.json" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes\Materials" />
      <Folder Include="Assets\XR\Settings" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\XRI" />
+     <Folder Include="Packages\com.valink.core\Tests\Runtime" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
@@ -108,7 +112,9 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <Folder Include="Packages\com.valink.core" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Materials" />
+     <Folder Include="Packages\com.valink.core\Runtime" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Scenes" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
@@ -123,6 +129,7 @@
      <Folder Include="Assets\ExampleAssets\Tutorial" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\ExampleAssets\Models" />
+     <Folder Include="Packages\com.valink.core\Documentation" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
      <Folder Include="Assets\XR\Loaders" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
@@ -803,6 +810,9 @@
      <Reference Include="Unity.XR.CoreUtils.Editor">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.CoreUtils.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.XR.MockHMD">
+     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.XR.Management">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.Management.dll</HintPath>
      </Reference>
@@ -844,6 +854,9 @@
      </Reference>
      <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.XR.MockHMD.Editor">
+     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Tutorials.Core.Editor">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.Tutorials.Core.Editor.dll</HintPath>
@@ -896,18 +909,8 @@
      <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
      <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.OpenXR.Features.RuntimeDebugger.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.XR.MockHMD">
-     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.XR.MockHMD.Editor">
-     <HintPath>C:\wamp\www\Formation VR\Library\ScriptAssemblies\Unity.XR.MockHMD.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="com.valink.core.csproj">
-      <Project>{78e3bc4d-3c84-97bc-9b52-66ece0f7c73b}</Project>
-      <Name>com.valink.core</Name>
-    </ProjectReference>
     <ProjectReference Include="tests.csproj">
       <Project>{bbdb835e-7989-f7a2-8ae2-3132c6b13faf}</Project>
       <Name>tests</Name>
@@ -923,6 +926,14 @@
     <ProjectReference Include="app.csproj">
       <Project>{431af9b3-8ae9-c633-7084-6c76b8996e53}</Project>
       <Name>app</Name>
+    </ProjectReference>
+    <ProjectReference Include="valink.core.Editor.csproj">
+      <Project>{02aad631-fa65-db0f-3344-ff78a7d77515}</Project>
+      <Name>valink.core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="valink.core.Editor.Tests.csproj">
+      <Project>{3bf89297-ebe0-8f8b-a06b-8822770590dd}</Project>
+      <Name>valink.core.Editor.Tests</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

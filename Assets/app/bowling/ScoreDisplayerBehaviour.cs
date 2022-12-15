@@ -8,22 +8,25 @@ namespace app.bowling
     {
         [SerializeField] private Transform framesContainer;
         [SerializeField] private FrameUIBehaviour framePrefab;
-        private List<FrameUIBehaviour> _framesUI;
+        private List<FrameUIBehaviour> _frameUis;
 
-        public void Setup(List<Frame> frames)
+        public void Init(Game game)
         {
-            _framesUI = new List<FrameUIBehaviour>();
-            foreach (var frame in frames)
+            _frameUis = new List<FrameUIBehaviour>();
+            foreach (var frame in game.Frames)
             {
                 var frameUI = Instantiate(framePrefab, framesContainer);
-                frameUI.Setup(frame);
-                _framesUI.Add(frameUI);
+                frameUI.Init(frame);
+                _frameUis.Add(frameUI);
             }
         }
 
-        public void UpdateFrame(Frame frame)
+        public void UpdateDisplay(Game game)
         {
-            _framesUI[frame.Index - 1].SetScores(frame);
+            foreach (var frame in game.Frames)
+            {
+                _frameUis[frame.Index-1].SetScores(frame);
+            }
         }
     }
 }

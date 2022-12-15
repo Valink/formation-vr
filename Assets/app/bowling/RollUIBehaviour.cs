@@ -7,9 +7,9 @@ namespace app.bowling
     {
         [SerializeField] private TMP_Text droppedPinNumberText;
 
-        public void SetRoll(int? droppedPinNumber)
+        public void SetRoll(string roll)
         {
-            droppedPinNumberText.text = droppedPinNumber.HasValue ? droppedPinNumber.Value.ToString() : " ";
+            droppedPinNumberText.text = roll;
         }
     }
 }

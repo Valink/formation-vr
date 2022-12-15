@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using app.bowling.logic;
 using TMPro;
 using UnityEngine;
@@ -9,38 +10,52 @@ namespace app.bowling
     {
         [SerializeField] private Transform rolls;
         [SerializeField] private RollUIBehaviour rollUiBehaviourPrefab;
-        [SerializeField] private List<RollUIBehaviour> rollUiBehaviours;
+        [SerializeField] private List<RollUIBehaviour> rollUis;
         [SerializeField] private TMP_Text index;
         [SerializeField] private TMP_Text cumulativeScore;
 
         public void Awake()
         {
-            rollUiBehaviours = new List<RollUIBehaviour>();
+            rollUis = new List<RollUIBehaviour>();
         }
         
-        public void Setup(Frame frame)
+        public void Init(Frame frame)
         {
             index.text = frame.Index.ToString();
-            cumulativeScore.text = frame.CumulativeScore.ToString();
             
-            foreach (var roll in frame.Rolls)
+            foreach (var _ in frame.Rolls)
             {
                 var rollUi = Instantiate(rollUiBehaviourPrefab, rolls);
-                rollUi.SetRoll(roll);
-                rollUiBehaviours.Add(rollUi);
+                rollUis.Add(rollUi);
             }
+            
+            SetScores(frame);
         }
 
         public void SetScores(Frame frame)
         {
-            Debug.Log("frame.CumulativeScore");
-            Debug.Log(frame.CumulativeScore);
-            cumulativeScore.text = frame.CumulativeScore.ToString();
-            
-            var rollIndexInFrame = 0;
-            foreach (var roll in frame.Rolls)
+            if (frame.Rolls.All(r => r.HasValue))
             {
-                rollUiBehaviours[rollIndexInFrame++].SetRoll(roll);
+                cumulativeScore.text = frame.CumulativeScore.ToString();
+            }
+
+            var rollIndexInFrame = 0;
+
+            if (frame.IsStrike())
+            {
+                rollUis[rollIndexInFrame].SetRoll("X");
+            }
+            else if (frame.IsSpare())
+            {
+                rollUis[rollIndexInFrame++].SetRoll(frame.Rolls[0]?.ToString());
+                rollUis[rollIndexInFrame].SetRoll("/");
+            }
+            else
+            {
+                foreach (var roll in frame.Rolls)
+                {
+                    rollUis[rollIndexInFrame++].SetRoll(roll.ToString());
+                }
             }
         }
     }

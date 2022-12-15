@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Valink
+namespace app
 {
-    public class HMDInfoManager : MonoBehaviour
+    public class HmdInfoManager : MonoBehaviour
     {
         void Start()
         {

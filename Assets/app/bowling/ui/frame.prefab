@@ -426,7 +426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XXX
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -768,7 +768,7 @@ MonoBehaviour:
   rolls: {fileID: 2044294420714140951}
   rollUiBehaviourPrefab: {fileID: 4102245853431095328, guid: 6dd0b6a85b1ab074aa4eeef4c54b173c,
     type: 3}
-  rollUiBehaviours: []
+  rollUis: []
   index: {fileID: 2049210291237438194}
   cumulativeScore: {fileID: 2049210291577688619}
 --- !u!114 &3567846782914006213

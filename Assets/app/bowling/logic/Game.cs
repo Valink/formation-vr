@@ -64,9 +64,7 @@ namespace app.bowling.logic
             int? score = 0;
             Frames.ForEach(frame =>
             {
-                // if (frame.Rolls.All(r => r.HasValue)) // TODO Move to display
                 score += GetScoreForFrame(frame);
-                Debug.Log(score);
                 frame.CumulativeScore = score;
             });
             return score;

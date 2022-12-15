@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "valink.core.Editor", "valink.core.Editor.csproj", "{02aad631-fa65-db0f-3344-ff78a7d77515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.StarterAssets", "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj", "{2265f7d0-094d-023f-abe1-f7805f88e64d}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Management.Samples", "Unity.XR.Management.Samples.csproj", "{accab1b8-c339-e4f2-88b5-790863730e7d}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Management.Samples.Editor", "Unity.XR.Management.Samples.Editor.csproj", "{7b9bd03c-6f5c-445f-e808-6557ffd4df18}"
@@ -26,6 +28,8 @@ Global
 		{65d9da8b-b360-1a6e-a771-640b97ad96e1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02aad631-fa65-db0f-3344-ff78a7d77515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02aad631-fa65-db0f-3344-ff78a7d77515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2265f7d0-094d-023f-abe1-f7805f88e64d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2265f7d0-094d-023f-abe1-f7805f88e64d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{accab1b8-c339-e4f2-88b5-790863730e7d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{accab1b8-c339-e4f2-88b5-790863730e7d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7b9bd03c-6f5c-445f-e808-6557ffd4df18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

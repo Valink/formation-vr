@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 820.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 110
+  controlID: 89
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,16 +64,16 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1096.8
+    x: 1194.4
     y: 0
-    width: 439.19995
+    width: 341.59998
     height: 770.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 20}
-  - {fileID: 16}
+  - {fileID: 21}
+  - {fileID: 17}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &4
@@ -86,22 +86,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneHierarchyWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 261.6
-    height: 440.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 21}
+    width: 190.4
+    height: 661.6
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 22}
   m_Panes:
-  - {fileID: 21}
+  - {fileID: 22}
+  - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -118,16 +119,16 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 440.8
-    width: 1096.8
-    height: 330
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 24}
+    y: 661.6
+    width: 1194.4
+    height: 109.20001
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 25}
   m_Panes:
+  - {fileID: 20}
+  - {fileID: 25}
   - {fileID: 19}
-  - {fileID: 24}
-  - {fileID: 18}
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &6
@@ -220,12 +221,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1096.8
+    width: 1194.4
     height: 770.8
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 55
+  controlID: 90
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,12 +246,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1096.8
-    height: 440.8
+    width: 1194.4
+    height: 661.6
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22
+  controlID: 91
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -266,24 +267,52 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 261.6
+    x: 190.4
     y: 0
-    width: 835.2001
-    height: 440.8
+    width: 1004
+    height: 661.6
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 23}
   m_Panes:
-  - {fileID: 22}
   - {fileID: 23}
-  - {fileID: 14}
-  - {fileID: 17}
-  - {fileID: 13}
+  - {fileID: 24}
   - {fileID: 15}
-  - {fileID: 12}
+  - {fileID: 18}
+  - {fileID: 14}
+  - {fileID: 16}
+  - {fileID: 13}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c262c1329a02fa49b5cb4c297106f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 136, y: 28}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: ProBuilder
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73.6
+    width: 296.6
+    height: 516.6
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -813,7 +842,7 @@ MonoBehaviour:
     m_Text: XR Device Simulator Controls (Input Actions)
     m_Image: {fileID: 0}
     m_Tooltip: 
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -869,7 +898,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -919,7 +948,7 @@ MonoBehaviour:
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1727,7 +1756,7 @@ MonoBehaviour:
     m_Text: XRI Default Input Actions (Input Actions)
     m_Image: {fileID: 0}
     m_Tooltip: 
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1755,7 +1784,7 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1776,15 +1805,15 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 298.4
+    x: 189.6
     y: 73.6
-    width: 938.7999
-    height: 399
+    width: 914.80005
+    height: 457.4
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1805,20 +1834,20 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 452.80002
-    width: 1095.8
-    height: 370.59998
+    y: 550.4
+    width: 1105.4
+    height: 273
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 7936
+    ID: 439
     splitterInitialOffset: 194.8
     currentActiveSplitter: -1
     realSizes:
-    - 146.4
-    - 153.6
+    - 99.2
+    - 104
     relativeSizes:
     - 0.4890625
     - 0.5109375
@@ -1828,7 +1857,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 300
+    lastTotalSize: 203.2
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -1838,7 +1867,7 @@ MonoBehaviour:
     oldSplitSize: 0
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 18}
+    m_Window: {fileID: 19}
     m_NewResultList:
     - id: 1011
       uniqueId: '[Formation VR][suite]'
@@ -1890,14 +1919,14 @@ MonoBehaviour:
       - Uncategorized
     m_SelectedOption: 0
   m_EditModeTestListGUI:
-    m_Window: {fileID: 18}
+    m_Window: {fileID: 19}
     m_NewResultList:
     - id: 1000
       uniqueId: '[Formation VR][suite]'
       name: Formation VR
       fullName: Formation VR
       resultStatus: 1
-      duration: 0.1356022
+      duration: 0.1147947
       messages: 
       output: 
       stacktrace: 
@@ -1908,111 +1937,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1005
-      uniqueId: '[com.valink.core.dll][suite]'
-      name: com.valink.core.dll
-      fullName: C:/wamp/www/Formation VR/Library/ScriptAssemblies/com.valink.core.dll
-      resultStatus: 1
-      duration: 0.0273638
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[Formation VR][suite]'
-    - id: 1006
-      uniqueId: com.valink.core.dll/[com.valink.core][range][suite]
-      name: range
-      fullName: range
-      resultStatus: 1
-      duration: 0.0267171
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: '[com.valink.core.dll][suite]'
-    - id: 1001
-      uniqueId: com.valink.core.dll/range/[com.valink.core][range.RangeModifierTest][suite]
-      name: RangeModifierTest
-      fullName: range.RangeModifierTest
-      resultStatus: 1
-      duration: 0.0256844
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1006
-      parentUniqueId: com.valink.core.dll/[com.valink.core][range][suite]
-    - id: 1002
-      uniqueId: com.valink.core.dll/range/RangeModifierTest/[com.valink.core][range.RangeModifierTest.ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound]
-      name: ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound
-      fullName: range.RangeModifierTest.ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound
-      resultStatus: 1
-      duration: 0.0136058
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: com.valink.core.dll/range/[com.valink.core][range.RangeModifierTest][suite]
-    - id: 1004
-      uniqueId: com.valink.core.dll/range/RangeModifierTest/[com.valink.core][range.RangeModifierTest.ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue]
-      name: ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue
-      fullName: range.RangeModifierTest.ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue
-      resultStatus: 1
-      duration: 0.0002144
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: com.valink.core.dll/range/[com.valink.core][range.RangeModifierTest][suite]
-    - id: 1003
-      uniqueId: com.valink.core.dll/range/RangeModifierTest/[com.valink.core][range.RangeModifierTest.ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound]
-      name: ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound
-      fullName: range.RangeModifierTest.ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound
-      resultStatus: 1
-      duration: 0.0001414
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1001
-      parentUniqueId: com.valink.core.dll/range/[com.valink.core][range.RangeModifierTest][suite]
     - id: 1018
       uniqueId: '[tests.dll][suite]'
       name: tests.dll
       fullName: C:/wamp/www/Formation VR/Library/ScriptAssemblies/tests.dll
       resultStatus: 1
-      duration: 0.0609247
+      duration: 0.0427205
       messages: 
       output: 
       stacktrace: 
@@ -2028,7 +1958,7 @@ MonoBehaviour:
       name: app
       fullName: app
       resultStatus: 1
-      duration: 0.053831
+      duration: 0.0420741
       messages: 
       output: 
       stacktrace: 
@@ -2044,7 +1974,7 @@ MonoBehaviour:
       name: tests
       fullName: app.tests
       resultStatus: 1
-      duration: 0.0501532
+      duration: 0.0417823
       messages: 
       output: 
       stacktrace: 
@@ -2060,7 +1990,7 @@ MonoBehaviour:
       name: BowlingGameTests
       fullName: app.tests.BowlingGameTests
       resultStatus: 1
-      duration: 0.0496508
+      duration: 0.0380775
       messages: 
       output: 
       stacktrace: 
@@ -2076,29 +2006,9 @@ MonoBehaviour:
       name: DummyPlay1
       fullName: app.tests.BowlingGameTests.DummyPlay1
       resultStatus: 1
-      duration: 0.0103955
+      duration: 0.021253
       messages: 
-      output: '14
-
-        23
-
-        43
-
-        63
-
-        83
-
-        101
-
-        109
-
-        129
-
-        149
-
-        169
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2113,29 +2023,9 @@ MonoBehaviour:
       name: DummyPlay2
       fullName: app.tests.BowlingGameTests.DummyPlay2
       resultStatus: 1
-      duration: 0.0038169
+      duration: 0.0003655
       messages: 
-      output: '14
-
-        18
-
-        27
-
-        47
-
-        67
-
-        97
-
-        121
-
-        141
-
-        161
-
-        186
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2150,29 +2040,9 @@ MonoBehaviour:
       name: Roll20PinsInGame
       fullName: app.tests.BowlingGameTests.Roll20PinsInGame
       resultStatus: 1
-      duration: 0.0037639
+      duration: 0.0002258
       messages: 
-      output: '2
-
-        4
-
-        6
-
-        8
-
-        10
-
-        12
-
-        14
-
-        16
-
-        18
-
-        20
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2187,29 +2057,9 @@ MonoBehaviour:
       name: RollAAlmostPerfectGame
       fullName: app.tests.BowlingGameTests.RollAAlmostPerfectGame
       resultStatus: 1
-      duration: 0.0038459
+      duration: 0.0001807
       messages: 
-      output: '30
-
-        60
-
-        90
-
-        120
-
-        150
-
-        180
-
-        210
-
-        240
-
-        270
-
-        291
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2224,29 +2074,9 @@ MonoBehaviour:
       name: RollAPerfectGame
       fullName: app.tests.BowlingGameTests.RollAPerfectGame
       resultStatus: 1
-      duration: 0.0037066
+      duration: 0.0001896
       messages: 
-      output: '30
-
-        60
-
-        90
-
-        120
-
-        150
-
-        180
-
-        210
-
-        240
-
-        270
-
-        300
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2261,29 +2091,9 @@ MonoBehaviour:
       name: RollASpare
       fullName: app.tests.BowlingGameTests.RollASpare
       resultStatus: 1
-      duration: 0.0036815
+      duration: 0.0001709
       messages: 
-      output: '11
-
-        12
-
-        12
-
-        12
-
-        12
-
-        12
-
-        12
-
-        12
-
-        12
-
-        12
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2298,29 +2108,9 @@ MonoBehaviour:
       name: RollASpareGame
       fullName: app.tests.BowlingGameTests.RollASpareGame
       resultStatus: 1
-      duration: 0.0040978
+      duration: 0.00018
       messages: 
-      output: '15
-
-        30
-
-        45
-
-        60
-
-        75
-
-        90
-
-        105
-
-        120
-
-        135
-
-        150
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2335,29 +2125,9 @@ MonoBehaviour:
       name: RollASpecialSpare
       fullName: app.tests.BowlingGameTests.RollASpecialSpare
       resultStatus: 1
-      duration: 0.0042298
+      duration: 0.0001896
       messages: 
-      output: '11
-
-        13
-
-        13
-
-        13
-
-        13
-
-        13
-
-        13
-
-        13
-
-        13
-
-        13
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2372,29 +2142,9 @@ MonoBehaviour:
       name: RollAStrike
       fullName: app.tests.BowlingGameTests.RollAStrike
       resultStatus: 1
-      duration: 0.0036722
+      duration: 0.0001752
       messages: 
-      output: '15
-
-        20
-
-        20
-
-        20
-
-        20
-
-        20
-
-        20
-
-        20
-
-        20
-
-        20
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2409,29 +2159,9 @@ MonoBehaviour:
       name: RollNoPinInGame
       fullName: app.tests.BowlingGameTests.RollNoPinInGame
       resultStatus: 1
-      duration: 0.0039458
+      duration: 0.0001973
       messages: 
-      output: '0
-
-        0
-
-        0
-
-        0
-
-        0
-
-        0
-
-        0
-
-        0
-
-        0
-
-        0
-
-'
+      output: 
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -2441,35 +2171,144 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1007
       parentUniqueId: tests.dll/app/tests/[tests][app.tests.BowlingGameTests][suite]
-    m_ResultText: 'RollASpare (0,004s)
-
-      ---
-
-      11
-
-      12
-
-      12
-
-      12
-
-      12
-
-      12
-
-      12
-
-      12
-
-      12
-
-      12'
+    - id: 1023
+      uniqueId: '[valink.core.Editor.Tests.dll][suite]'
+      name: valink.core.Editor.Tests.dll
+      fullName: C:/wamp/www/Formation VR/Library/ScriptAssemblies/valink.core.Editor.Tests.dll
+      resultStatus: 1
+      duration: 0.024123
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Formation VR][suite]'
+    - id: 1024
+      uniqueId: valink.core.Editor.Tests.dll/[Tests][suite]
+      name: Tests
+      fullName: Tests
+      resultStatus: 1
+      duration: 0.0138952
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1023
+      parentUniqueId: '[valink.core.Editor.Tests.dll][suite]'
+    - id: 1025
+      uniqueId: valink.core.Editor.Tests.dll/Tests/[Editor][suite]
+      name: Editor
+      fullName: Tests.Editor
+      resultStatus: 1
+      duration: 0.0085312
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1024
+      parentUniqueId: valink.core.Editor.Tests.dll/[Tests][suite]
+    - id: 1026
+      uniqueId: valink.core.Editor.Tests.dll/Tests/Editor/[valink.core.Editor.Tests][Tests.Editor.range][suite]
+      name: range
+      fullName: Tests.Editor.range
+      resultStatus: 1
+      duration: 0.0081059
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1025
+      parentUniqueId: valink.core.Editor.Tests.dll/Tests/[Editor][suite]
+    - id: 1019
+      uniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest][suite]
+      name: RangeModifierTest
+      fullName: Tests.Editor.range.RangeModifierTest
+      resultStatus: 1
+      duration: 0.0049522
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1026
+      parentUniqueId: valink.core.Editor.Tests.dll/Tests/Editor/[valink.core.Editor.Tests][Tests.Editor.range][suite]
+    - id: 1020
+      uniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/RangeModifierTest/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound]
+      name: ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound
+      fullName: Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeFirstBoundWhenGivingOriginRangeFirstBound
+      resultStatus: 1
+      duration: 0.0013373
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1019
+      parentUniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest][suite]
+    - id: 1022
+      uniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/RangeModifierTest/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue]
+      name: ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue
+      fullName: Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeMidValueWhenGivingOriginRangeMidValue
+      resultStatus: 1
+      duration: 0.0002553
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1019
+      parentUniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest][suite]
+    - id: 1021
+      uniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/RangeModifierTest/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound]
+      name: ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound
+      fullName: Tests.Editor.range.RangeModifierTest.ShouldReturnDestRangeSecondBoundWhenGivingOriginRangeSecondBound
+      resultStatus: 1
+      duration: 0.0002088
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1019
+      parentUniqueId: valink.core.Editor.Tests.dll/Tests/Editor/range/[valink.core.Editor.Tests][Tests.Editor.range.RangeModifierTest][suite]
+    m_ResultText: RollASpare (0,000s)
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 194}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 21ffa286
       m_LastClickedID: -2036138207
-      m_ExpandedIDs: a991d0800ceaf0907509db916e4f50a8fb35a3a80116bce7b1944fec4503801402b69f1e7abd3921ffffff7f
+      m_ExpandedIDs: a991d0800ceaf0907509db916e4f50a8fb35a3a80116bce702b69f1e7abd3921ffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2495,7 +2334,7 @@ MonoBehaviour:
       selectedCategoryMask: 0
       availableCategories:
       - Uncategorized
---- !u!114 &19
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2517,9 +2356,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 514.4
-    width: 1095.8
-    height: 309
+    y: 493.6
+    width: 1105.4
+    height: 329.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2537,22 +2376,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/app/bowling/ball
+    - Assets/app/bowling/rules
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/app/bowling/ball
+  - Assets/app/bowling/rules
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\wamp\www\Formation VR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 41.400024}
-    m_SelectedIDs: 86610000
-    m_LastClickedID: 24966
-    m_ExpandedIDs: 000000005c6100005e61000060610000626100006461000066610000686100006a6100006c6100006e61000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 146.20001}
+    m_SelectedIDs: 22ea0000
+    m_LastClickedID: 59938
+    m_ExpandedIDs: 0000000024610000286100002a6100002e610000306100003461000036610000788b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2580,7 +2419,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c6100005e61000060610000626100006461000066610000686100006a6100006c6100006e610000
+    m_ExpandedIDs: 000000002461000026610000286100002a6100002c6100002e61000030610000326100003461000036610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2605,24 +2444,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c45a0000
-    m_LastClickedInstanceID: 23236
+    m_SelectedInstanceIDs: 02af0000
+    m_LastClickedInstanceID: 44802
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ball
-      m_OriginalName: ball
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 23618
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -2636,7 +2475,7 @@ MonoBehaviour:
     m_GridSize: 16
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 207
---- !u!114 &20
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2657,9 +2496,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1096.8
-    y: 73.6
-    width: 438.19995
+    x: 1195.4
+    y: 19
+    width: 340.59998
     height: 749.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -2678,7 +2517,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &21
+--- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2700,19 +2539,19 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73.6
-    width: 260.6
-    height: 419.8
+    y: 19
+    width: 189.4
+    height: 640.6
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 256}
-      m_SelectedIDs: c45a0000
-      m_LastClickedID: 23236
-      m_ExpandedIDs: 7873ffffd487ffffe8ccffffeeccffff2cf8ffff2cfbffff94590000c6590000ca590000dc590000f4590000425a0000c45a0000065b00002a5b0000325b00006c5b0000ac5b0000e85b0000fe5b0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 02af0000
+      m_LastClickedID: 44802
+      m_ExpandedIDs: 040bffff640bffff84b7ffff02b8ffff2cfbffffd67d0000ee7d0000c07e00001c7f000074ae0000d0ae000098af0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2736,7 +2575,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &22
+--- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2757,10 +2596,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 261.6
+    x: 190.40001
     y: 73.6
-    width: 833.2001
-    height: 419.8
+    width: 1002
+    height: 640.6
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2771,7 +2610,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
       snapOffset: {x: -100, y: -25.600006}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: -0.000030517578}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -2781,9 +2620,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -141, y: 149}
+      snapOffset: {x: -141, y: -225.4}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 3
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
@@ -2814,7 +2653,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 24.8}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -2962,9 +2801,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.2511475, y: 1.400034, z: -0.056447864}
+    m_Target: {x: 2.6853297, y: -3.114121, z: 1.5865183}
     speed: 2
-    m_Value: {x: -0.2511475, y: 1.400034, z: -0.056447864}
+    m_Value: {x: 2.6853297, y: -3.114121, z: 1.5865183}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2990,12 +2829,12 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -3006,25 +2845,25 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
-    m_ShowGrid: 0
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.38712463, y: 0.09160408, z: -0.03868751, w: 0.916657}
+    m_Target: {x: 0.20984712, y: 0.17865284, z: -0.03903246, w: 0.96048826}
     speed: 2
-    m_Value: {x: 0.387122, y: 0.09160345, z: -0.038687244, w: 0.9166508}
+    m_Value: {x: 0.21128616, y: 0.17859285, z: -0.03930013, w: 0.9601658}
   m_Size:
-    m_Target: 1.4338855
+    m_Target: 8.347784
     speed: 2
-    m_Value: 1.4338855
+    m_Value: 8.347784
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.58070993
-    m_SpeedNormalized: 0.28999996
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -3042,7 +2881,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &23
+--- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3063,10 +2902,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 261.6
+    x: 237.6
     y: 73.6
-    width: 833.2001
-    height: 419.8
+    width: 866.80005
+    height: 399
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -3077,10 +2916,10 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 833.2001, y: 398.8}
+  m_TargetSize: {x: 866.80005, y: 378}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
+  m_RenderIMGUI: 0
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -3092,10 +2931,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -333.28003
-    m_HBaseRangeMax: 333.28003
-    m_VBaseRangeMin: -159.52
-    m_VBaseRangeMax: 159.52
+    m_HBaseRangeMin: -346.72003
+    m_HBaseRangeMax: 346.72003
+    m_VBaseRangeMin: -151.2
+    m_VBaseRangeMax: 151.2
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -3113,29 +2952,29 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 833.2001
-      height: 398.8
+      width: 866.80005
+      height: 378
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 416.60004, y: 199.4}
+    m_Translation: {x: 433.40002, y: 189}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -416.60004
-      y: -199.4
-      width: 833.2001
-      height: 398.8
+      x: -433.40002
+      y: -189
+      width: 866.80005
+      height: 378
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1041.5001, y: 524.75}
+  m_LastWindowPixelSize: {x: 1083.5, y: 498.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
-  m_XRRenderMode: 1
+  m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &24
+--- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3157,9 +2996,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 514.4
-    width: 1095.8
-    height: 309
+    y: 680.6
+    width: 1193.4
+    height: 88.20001
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

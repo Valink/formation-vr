@@ -78,7 +78,6 @@
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
-     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Tunneling Vignette" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Packages\com.valink.core\Samples" />
@@ -87,6 +86,7 @@
      <Folder Include="Assets\XR" />
      <Folder Include="Assets\ExampleAssets\Prefabs" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Prefabs" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Tunneling Vignette" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\ExampleAssets" />
      <Folder Include="Packages\com.valink.core\valink" />
@@ -97,6 +97,7 @@
      <None Include="Packages\com.valink.core\package.json" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes\Materials" />
      <Folder Include="Assets\XR\Settings" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0\XR Device Simulator" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Textures" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\XRI" />
@@ -105,8 +106,7 @@
      <Folder Include="Assets\Darth_Artisan\Free_Trees\Meshes" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources" />
-     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Starter Assets" />
-     <None Include="Assets\Samples\XR Interaction Toolkit\2.1.1\Tunneling Vignette\TunnelingVignette.shader" />
+     <None Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Tunneling Vignette\TunnelingVignette.shader" />
      <Folder Include="Assets\Darth_Artisan\Free_Trees" />
      <Folder Include="Assets\Samples" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -138,10 +138,9 @@
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Scenes" />
      <Folder Include="Assets\XRI\Settings" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1" />
      <Folder Include="Assets\Darth_Artisan" />
      <Folder Include="Assets\ProBuilder Data" />
-     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.1.1\XR Device Simulator" />
+     <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Samples\XR Interaction Toolkit" />
@@ -911,6 +910,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="valink.core.Editor.Tests.csproj">
+      <Project>{3bf89297-ebe0-8f8b-a06b-8822770590dd}</Project>
+      <Name>valink.core.Editor.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="tests.csproj">
       <Project>{bbdb835e-7989-f7a2-8ae2-3132c6b13faf}</Project>
       <Name>tests</Name>
@@ -918,6 +921,10 @@
     <ProjectReference Include="Unity.XR.Management.Samples.Editor.csproj">
       <Project>{7b9bd03c-6f5c-445f-e808-6557ffd4df18}</Project>
       <Name>Unity.XR.Management.Samples.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="valink.core.Editor.csproj">
+      <Project>{02aad631-fa65-db0f-3344-ff78a7d77515}</Project>
+      <Name>valink.core.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.Management.Samples.csproj">
       <Project>{accab1b8-c339-e4f2-88b5-790863730e7d}</Project>
@@ -927,13 +934,9 @@
       <Project>{431af9b3-8ae9-c633-7084-6c76b8996e53}</Project>
       <Name>app</Name>
     </ProjectReference>
-    <ProjectReference Include="valink.core.Editor.csproj">
-      <Project>{02aad631-fa65-db0f-3344-ff78a7d77515}</Project>
-      <Name>valink.core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="valink.core.Editor.Tests.csproj">
-      <Project>{3bf89297-ebe0-8f8b-a06b-8822770590dd}</Project>
-      <Name>valink.core.Editor.Tests</Name>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
+      <Project>{2265f7d0-094d-023f-abe1-f7805f88e64d}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

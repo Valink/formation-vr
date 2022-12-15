@@ -21,6 +21,8 @@ namespace app.bowling
         private List<PinBehaviour> _currentFramePins;
         private bool _isCompleted;
         private GameObject _currentBall;
+        private static readonly Vector3 BallCameraOffset = new(0,.5f,-.5f);
+        private static readonly Vector3 BallCameraRotation = new(25,0,0);
 
         [Header("Debug")]
         [SerializeField] private bool mockRoll;
@@ -30,9 +32,17 @@ namespace app.bowling
         private void Awake()
         {
             InitGame(10);
+            
+            InitBallCamera();
 
             _game.GameCompleted += OnGameCompleted;
             ballDetectorBehaviour.BallEntered += OnBallEntered;
+        }
+
+        private void InitBallCamera()
+        {
+            ballCamera.offset = BallCameraOffset;
+            ballCamera.SetRotation(BallCameraRotation);
         }
 
         private void Update()
@@ -54,6 +64,11 @@ namespace app.bowling
             }
         }
 
+        public void SkipRoll()
+        {
+            ProcessRoll(0);
+        }
+
         private void InitGame(int frameNumber)
         {
             _isCompleted = false;
@@ -66,7 +81,8 @@ namespace app.bowling
         private void SpawnBall()
         {
             _currentBall = ballSpawner.SpawnBall();
-            ballCamera.Target = _currentBall.transform;
+            
+            ballCamera.positionTarget = _currentBall.transform.GetChild(0);
         }
 
         private void SetupFrame()
@@ -80,11 +96,17 @@ namespace app.bowling
             _isCompleted = true;
         }
 
-        private async void OnBallEntered()
+        private void OnBallEntered()
         {
-            await Task.Delay(5000);
+            ProcessRoll();
+        }
 
+        private async Task ProcessRoll(int delayInSeconds = 4)
+        {
             DestroyCurrentBall();
+
+            await Task.Delay(delayInSeconds * 1000);
+
             SpawnBall();
 
             var droppedPinsNumber = GetDroppedPinsNumber();

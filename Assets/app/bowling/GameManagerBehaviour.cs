@@ -14,10 +14,10 @@ namespace app.bowling
         [SerializeField] private PinDroppedDisplay pinDroppedDisplay;
         [SerializeField] private ScoreDisplayerBehaviour scoreDisplayerBehaviour;
         [SerializeField] private PinSpawnerBehaviour pinSpawnerBehaviour;
-        [SerializeField] private BallSpawner ballSpawner;
+        [SerializeField] private BallSpawnerBehaviour ballSpawnerBehaviour;
         [SerializeField] private Follower ballCamera;
         [SerializeField] private BallDetectorBehaviour ballDetectorBehaviour;
-        
+
         private List<PinBehaviour> _currentFramePins;
         private bool _isCompleted;
         private GameObject _currentBall;
@@ -80,9 +80,9 @@ namespace app.bowling
 
         private void SpawnBall()
         {
-            _currentBall = ballSpawner.SpawnBall();
+            _currentBall = ballSpawnerBehaviour.SpawnBall();
             
-            ballCamera.positionTarget = _currentBall.transform.GetChild(0);
+            ballCamera.positionTarget = _currentBall.transform.GetChild(0).GetChild(0);
         }
 
         private void SetupFrame()

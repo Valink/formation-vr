@@ -43,12 +43,11 @@
   <ItemGroup>
      <Compile Include="Assets\app\bowling\logic\Frame.cs" />
      <Compile Include="Assets\app\bowling\logic\RollFrameAndIndexInFrame.cs" />
-     <Compile Include="Assets\app\bowling\pin\PinBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\ballAndPin\PinBehaviour.cs" />
      <Compile Include="Assets\app\bowling\PinSpawnerBehaviour.cs" />
      <Compile Include="Assets\app\bowling\RollUIBehaviour.cs" />
      <Compile Include="Assets\app\bowling\FrameUIBehaviour.cs" />
-     <Compile Include="Assets\app\bowling\logic\RollEventArgs.cs" />
-     <Compile Include="Assets\app\bowling\BallSpawner.cs" />
+     <Compile Include="Assets\app\bowling\BallSpawnerBehaviour.cs" />
      <Compile Include="Assets\app\bowling\GameManagerBehaviour.cs" />
      <Compile Include="Assets\app\HmdInfoManager.cs" />
      <Compile Include="Assets\app\bowling\ScoreDisplayerBehaviour.cs" />
@@ -56,17 +55,21 @@
      <Compile Include="Assets\app\bowling\PinSpawnControllerBehaviour.cs" />
      <Compile Include="Assets\app\bowling\ui\PinDroppedDisplay.cs" />
      <Compile Include="Assets\app\bowling\BallDetectorBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\room\LaneSizer.cs" />
+     <Compile Include="Assets\app\bowling\GutterBehaviour.cs" />
+     <Compile Include="Assets\app\bowling\GutterManagerBehaviour.cs" />
      <None Include="Assets\app\app.asmdef" />
      <Folder Include="Assets\app\bowling\camera" />
      <Folder Include="Assets\app\bowling\room" />
      <Folder Include="Assets\app\bowling\rules" />
      <Folder Include="Assets\app\bowling\ui" />
+     <Folder Include="Assets\app\bowling\ballAndPin\resources" />
      <Folder Include="Assets\app\bowling" />
-     <Folder Include="Assets\app\bowling\pin" />
-     <Folder Include="Assets\app\bowling\ball" />
+     <Folder Include="Assets\app\bowling\ballAndPin" />
      <Folder Include="Assets\app\bowling\logic" />
      <Folder Include="Assets\app\bowling\sounds" />
      <Folder Include="Assets\app" />
+     <Folder Include="Assets\app\bowling\room\resources" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

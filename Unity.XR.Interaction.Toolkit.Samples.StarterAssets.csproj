@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets\Scripts\ActionBasedControllerManager.cs" />
      <Compile Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets\Scripts\DynamicMoveProvider.cs" />
+     <Compile Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets\Scripts\ActionBasedControllerManager.cs" />
      <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets\Scripts" />
      <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets\Models" />
      <Folder Include="Assets\Samples\XR Interaction Toolkit\2.2.0\Starter Assets" />

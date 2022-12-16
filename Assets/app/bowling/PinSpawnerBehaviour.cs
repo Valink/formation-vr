@@ -8,8 +8,8 @@ namespace app.bowling
     {
         [SerializeField] private PinBehaviour pinPrefab;
         [SerializeField] private Transform pinParent;
-        [SerializeField] private float pinXDistance = .2635f;
-        [SerializeField] private float pinZDistance = .305f;
+        [SerializeField] public float pinXSpacing = .2635f;
+        [SerializeField] private float pinZSpacing = .305f;
         private List<PinBehaviour> _pins;
     
         // inspector section
@@ -44,9 +44,9 @@ namespace app.bowling
             var pin = Instantiate(pinPrefab, pinParent.transform);
             pin.name = pinRowIndex + " - " + pinIndexInRow;
             pin.transform.localPosition = new Vector3(
-                pinIndexInRow * pinXDistance - (pinRowIndex - 1) * pinXDistance / 2,
+                pinIndexInRow * pinXSpacing - (pinRowIndex - 1) * pinXSpacing / 2,
                 0,
-                (pinRowNumber - pinRowIndex) * pinZDistance
+                (pinRowNumber - pinRowIndex) * pinZSpacing
             );
             return pin;
         }

@@ -914,6 +914,10 @@
       <Project>{3bf89297-ebe0-8f8b-a06b-8822770590dd}</Project>
       <Name>valink.core.Editor.Tests</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
+      <Project>{2265f7d0-094d-023f-abe1-f7805f88e64d}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
+    </ProjectReference>
     <ProjectReference Include="tests.csproj">
       <Project>{bbdb835e-7989-f7a2-8ae2-3132c6b13faf}</Project>
       <Name>tests</Name>
@@ -933,10 +937,6 @@
     <ProjectReference Include="app.csproj">
       <Project>{431af9b3-8ae9-c633-7084-6c76b8996e53}</Project>
       <Name>app</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{2265f7d0-094d-023f-abe1-f7805f88e64d}</Project>
-      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

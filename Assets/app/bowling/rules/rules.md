@@ -4,6 +4,12 @@
 
 ![](score.png)
 
+## lane
+![](lane.png)
+
+## ball
+![](ball.png)
+
 ## pin
 
 ### Ten-Pin Bowling Pin specifications

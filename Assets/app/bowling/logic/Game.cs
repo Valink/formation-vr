@@ -17,15 +17,15 @@ namespace app.bowling.logic
 
         public event GameCompletedHandler GameCompleted;
 
-        public Game(int frameNumber)
+        public Game(int frameNumber, int pinCount = 10)
         {
             Frames = new List<Frame>();
             for (var i = 1; i <= frameNumber - 1; i++)
             {
-                Frames.Add(new Frame(i, 10, 2));
+                Frames.Add(new Frame(i, pinCount, 2));
             }
 
-            Frames.Add(new Frame(10, 10, 3));
+            Frames.Add(new Frame(10, pinCount, 3));
 
             CurrentFrame = Frames.First();
         }

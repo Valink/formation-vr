@@ -43,12 +43,12 @@ namespace app.bowling.logic
 
         public bool IsSpare()
         {
-            return Rolls[0] + Rolls[1] == 10;
+            return Rolls[0] + Rolls[1] == PinCount;
         }
 
         public bool IsStrike()
         {
-            return Rolls.First() == 10;
+            return Rolls.First() == PinCount;
         }
 
         public override string ToString()

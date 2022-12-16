@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using app.bowling.logic;
 using app.bowling.pin;
+using app.bowling.room;
 using app.bowling.ui;
 using Editor.transform;
 using UnityEngine;
@@ -17,22 +18,23 @@ namespace app.bowling
         [SerializeField] private BallSpawnerBehaviour ballSpawnerBehaviour;
         [SerializeField] private Follower ballCamera;
         [SerializeField] private BallDetectorBehaviour ballDetectorBehaviour;
+        [SerializeField] private LaneSizer laneSizer;
+        [SerializeField] private int pinRows = 4;
 
         private List<PinBehaviour> _currentFramePins;
         private bool _isCompleted;
         private GameObject _currentBall;
-        private static readonly Vector3 BallCameraOffset = new(0,.5f,-.5f);
-        private static readonly Vector3 BallCameraRotation = new(25,0,0);
+        private static readonly Vector3 BallCameraOffset = new(0, .5f, -.5f);
+        private static readonly Vector3 BallCameraRotation = new(25, 0, 0);
 
-        [Header("Debug")]
-        [SerializeField] private bool mockRoll;
+        [Header("Debug")] [SerializeField] private bool mockRoll;
         [SerializeField] private bool mockGutter;
-        [SerializeField] private bool mockTen;
-        
+        [SerializeField] private bool mockRestingPins;
+
         private void Awake()
         {
             InitGame(10);
-            
+
             InitBallCamera();
 
             _game.GameCompleted += OnGameCompleted;
@@ -47,20 +49,22 @@ namespace app.bowling
 
         private void Update()
         {
+            var restingPinsNumber = _game.CurrentFrame.PinCount - (_game.CurrentFrame.Rolls[0] ?? 0);
             if (mockRoll)
             {
                 mockRoll = false;
-                var max = _game.CurrentFrame.PinCount - (_game.CurrentFrame.Rolls[0] ?? 0);
-                var droppedPinNumber = Random.Range(1, max);
+                var droppedPinNumber = Random.Range(1, restingPinsNumber);
                 ProcessDroppedPins(droppedPinNumber);
-            } else if (mockGutter)
+            }
+            else if (mockGutter)
             {
                 mockGutter = false;
                 ProcessDroppedPins(0);
-            } else if (mockTen)
+            }
+            else if (mockRestingPins)
             {
-                mockTen = false;
-                ProcessDroppedPins(10);
+                mockRestingPins = false;
+                ProcessDroppedPins(restingPinsNumber);
             }
         }
 
@@ -72,7 +76,8 @@ namespace app.bowling
         private void InitGame(int frameNumber)
         {
             _isCompleted = false;
-            _game = new Game(frameNumber);
+            var pinsNumber = pinRows * (pinRows + 1) / 2;
+            _game = new Game(frameNumber, pinsNumber);
             scoreDisplayerBehaviour.Init(_game);
             SpawnBall();
             SetupFrame();
@@ -81,14 +86,15 @@ namespace app.bowling
         private void SpawnBall()
         {
             _currentBall = ballSpawnerBehaviour.SpawnBall();
-            
-            ballCamera.positionTarget = _currentBall.transform.GetChild(0).GetChild(0);
+
+            ballCamera.positionTarget = _currentBall.transform.GetChild(0);
         }
 
         private void SetupFrame()
         {
             pinSpawnerBehaviour.RemovePins();
-            _currentFramePins = pinSpawnerBehaviour.SpawnPins(4);
+            laneSizer.SetupLaneFor(pinRows);
+            _currentFramePins = pinSpawnerBehaviour.SpawnPins(pinRows);
         }
 
         private void OnGameCompleted(Game game)
@@ -101,22 +107,16 @@ namespace app.bowling
             ProcessRoll();
         }
 
-        private async Task ProcessRoll(int delayInSeconds = 4)
+        private async Task ProcessRoll(float delayInSeconds = 2f)
         {
-            DestroyCurrentBall();
+            await Task.Delay((int)delayInSeconds * 1000);
 
-            await Task.Delay(delayInSeconds * 1000);
-
+            ballSpawnerBehaviour.DestroyAllBalls();
             SpawnBall();
 
             var droppedPinsNumber = GetDroppedPinsNumber();
 
             ProcessDroppedPins(droppedPinsNumber);
-        }
-
-        private void DestroyCurrentBall()
-        {
-            Destroy(_currentBall);
         }
 
         private int GetDroppedPinsNumber()
